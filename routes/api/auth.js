@@ -7,6 +7,7 @@ const { check, validationResult } = require("express-validator");
 const auth = require("../../middleware/auth");
 const User = require("../../models/User");
 
+// ---------------------------------------------------------------------------------------------------------
 // @route    GET api/auth
 // @desc     Get user by token
 // @access   Private
@@ -19,7 +20,9 @@ router.get("/", auth, async (req, res) => {
     res.status(500).send("Server Error");
   }
 });
+// ---------------------------------------------------------------------------------------------------------
 
+// ---------------------------------------------------------------------------------------------------------
 // @route   POST api/auth
 // @desc    Authenticate user & get token
 // @access  Public
@@ -62,5 +65,6 @@ router.post(
     }
   }
 );
+// ---------------------------------------------------------------------------------------------------------
 
 module.exports = router;
